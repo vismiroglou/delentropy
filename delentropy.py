@@ -78,7 +78,6 @@ def calc_hist(grad:np.ndarray) -> np.ndarray:
     #     print("Using sparse histogram")
     #     hist = make_sparse_hist(grad, width, height)
     # else:
-    print("Using flat histogram")
     hist = make_flat_hist(grad, width, height)
     return hist
 
@@ -164,8 +163,8 @@ def calc_delentropy(hist, grad):
                     maxBinDelentropy = binDelentropy
 
                 delentropy += binDelentropy
-    print(f'Delentropy: {delentropy}')
-    return delentropy
+    # print(f'Delentropy: {delentropy}')
+    return delentropy / 2.0
 
 if __name__ == '__main__':
     from argparse import ArgumentParser
